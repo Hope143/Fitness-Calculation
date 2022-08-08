@@ -1,0 +1,26 @@
+.calorieWidth {
+  width: 50% !important;
+  margin: none;
+}
+
+.calorieFontSize {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+  .calorieWidth {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .calorieFontSize {
+    font-size: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .inputCalorieSectionWidth {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,36 @@
+.embededText {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(22, 21, 21, 0.8),
+    rgb(234, 233, 233, 0)
+  );
+}
+
+.forBorder {
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(
+    0.25turn,
+    rgb(255, 255, 255),
+    rgba(56, 2, 155, 0)
+  );
+  border-image-slice: 1;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .responsiveWidth {
+    width: 50%;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 575px) {
+  .embededText {
+    position: relative;
+  }
+}
