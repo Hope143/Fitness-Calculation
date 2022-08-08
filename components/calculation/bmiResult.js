@@ -35,18 +35,20 @@ function inputData({
     setBMIresult(roundedResult);
 
     if (details.gender === "male") {
-      const result =
-        88.362 +
-        13.397 * details.weight +
-        4.799 * details.height -
-        5.677 * details.age;
+      const result = (
+        10 * details.weight +
+        6.25 * details.height -
+        5 * details.age +
+        5
+      ).toFixed(0);
       setBmrResult(result);
     } else {
-      const result =
-        447.593 +
-        9.247 * details.weight +
-        3.098 * details.height -
-        4.33 * details.age;
+      const result = (
+        10 * details.weight +
+        6.25 * details.height -
+        5 * details.age -
+        161
+      ).toFixed(0);
       setBmrResult(result);
     }
   }

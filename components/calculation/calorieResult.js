@@ -1,39 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styleCalorie from "./calorieResult.module.css";
 import CalorieChart from "./CalorieChart/calorieChart";
+import InvalidModal from "./InvalidModal/invalidModal";
 
-function CalorieResult({ bmrResult }) {
+function CalorieResult({ details, bmrResult, bmiResult }) {
   const [value, setValue] = useState("Sedentary");
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isFormFulfilled, setIsFormFulFilled] = useState(false);
   const [maintainCalorie, setMaintainCalorie] = useState();
 
   function onDropdownChange(e) {
     setValue(e.target.value);
   }
 
-  console.log("bmr: " + bmrResult);
-  console.log("bmr per training is: " + maintainCalorie);
+  // console.log(Object.keys(details) === "");
 
-  function submitBmrHandler(event) {
+  function FormFulfilled() {
+    for (const key in details) {
+      if (bmiResult === undefined || details[key] === "") {
+        setIsFormFulFilled(false);
+      } else {
+        setIsFormFulFilled(true);
+      }
+    }
+  }
+
+  async function submitBmrHandler(event) {
     event.preventDefault();
+    await FormFulfilled();
     if (value === "Sedentary") {
-      const result = (bmrResult * 1.2).toFixed(2);
+      const result = (bmrResult * 1.2).toFixed(0);
       setMaintainCalorie(result);
     } else if (value === "Lightly Active") {
-      const result = (bmrResult * 1.375).toFixed(2);
+      const result = (bmrResult * 1.375).toFixed(0);
       setMaintainCalorie(result);
     } else if (value === "Moderately Active") {
-      const result = (bmrResult * 1.55).toFixed(2);
+      const result = (bmrResult * 1.55).toFixed(0);
       setMaintainCalorie(result);
     } else if (value === "Very Active") {
-      const result = (bmrResult * 1.725).toFixed(2);
+      const result = (bmrResult * 1.725).toFixed(0);
       setMaintainCalorie(result);
     } else {
-      const result = (bmrResult * 1.9).toFixed(2);
+      const result = (bmrResult * 1.9).toFixed(0);
       setMaintainCalorie(result);
     }
-
-    setIsSubmitted(true);
   }
 
   return (
@@ -41,7 +50,7 @@ function CalorieResult({ bmrResult }) {
       <h3 className="text-dark fs-2 fw-bold mt-5 mb-4">
         Calculate your Calories
       </h3>
-
+      {/* <InvalidModal /> */}
       <div className="d-block d-md-flex justify-content-around">
         <div className={`w-50 ${styleCalorie.inputCalorieSectionWidth}`}>
           <form onSubmit={submitBmrHandler}>
@@ -106,8 +115,7 @@ function CalorieResult({ bmrResult }) {
                     onClick={onDropdownChange}
                     className={`dropdown-item ${styleCalorie.calorieFontSize}`}
                   >
-                    Extra Active (very hard exercise/sports and physical job or
-                    2x training)
+                    Extra Active (very hard exercise and a physical job)
                   </button>
                 </li>
               </ul>
@@ -117,9 +125,19 @@ function CalorieResult({ bmrResult }) {
             </button>
           </form>
           <div className="row w-100 m-auto border border-white shadow text-secondary fs-5 fw-bold text-dark text-center">
-            <p className="col p-2 bg-dark text-light mb-0">BMR Result: </p>
+            <p className="col p-2 bg-dark text-light mb-0">
+              BMR Result
+              <a
+                data-bs-toggle="tooltip"
+                aria-describedby="tooltip625190"
+                title="Mifflin - St Jeor Formula"
+              >
+                <i className="bi bi-info-circle px-1"></i>
+              </a>
+              :{" "}
+            </p>
             <div className="col p-2 bg-secondary text-light">
-              <h3>{isSubmitted && <p>{bmrResult}</p>}</h3>
+              {isFormFulfilled && <p className="mb-0">{bmrResult}</p>}
             </div>
           </div>
           <div className="row w-100 m-auto border border-white shadow text-secondary fs-5 fw-bold text-dark text-center">
@@ -127,12 +145,15 @@ function CalorieResult({ bmrResult }) {
               Maintain Calorie:{" "}
             </p>
             <div className="col p-2 bg-secondary text-light">
-              <h3>{isSubmitted && <p>{maintainCalorie}</p>}</h3>
+              {isFormFulfilled && <p className="mb-0">{maintainCalorie}</p>}
             </div>
           </div>
         </div>
-        <div className="pt-3 pt-md-0">
-          <CalorieChart />
+        <div className={`pt-3 pt-md-0`}>
+          <CalorieChart
+            isFormFulfilled={isFormFulfilled}
+            bmrResult={bmrResult}
+          />
         </div>
       </div>
     </div>

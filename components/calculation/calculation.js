@@ -25,7 +25,11 @@ function Calculation() {
           bmiResult={bmiResult}
           setBmrResult={setBmrResult}
         />
-        <CalorieResult details={details} bmrResult={bmrResult} />
+        <CalorieResult
+          details={details}
+          bmrResult={bmrResult}
+          bmiResult={bmiResult}
+        />
       </div>
     </section>
   );
