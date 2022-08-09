@@ -1,3 +1,8 @@
+.fontStyleTitle {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700 !important;
+}
+
 .calorieWidth {
   width: 50% !important;
   margin: none;

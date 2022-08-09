@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import BMIresultHandler from "./BmiData/bmiData";
 import BMIchart from "./BmiChart/bmiChart";
-import styleCalorie from "./calorieResult.module.css";
+import styleCalorie from "../CalorieSection/calorieResult.module.css";
 
 function inputData({
   details,
@@ -55,7 +55,11 @@ function inputData({
 
   return (
     <div>
-      <h3 className="text-dark fs-2 fw-bold mb-4">Calculate your BMI</h3>
+      <h3
+        className={`text-dark fs-2 fw-bold mb-4 ${styleCalorie.fontStyleTitle}`}
+      >
+        Calculate your BMI
+      </h3>
       <div className="d-block d-md-flex justify-content-around">
         <div
           className={`w-50 me-0 me-md-2 me-lg-0 ${styleCalorie.inputCalorieSectionWidth}`}

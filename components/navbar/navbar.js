@@ -1,10 +1,13 @@
+import navbarStyle from "./frontpage.module.css";
+import Head from "next/head";
+
 function navbar() {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div className="container">
-          <a href="#" className="navbar-brand">
-            Fitness Guide
+          <a href="#" className={`navbar-brand ${navbarStyle.navbarFont}`}>
+            Fitness.Guide
           </a>
 
           <button

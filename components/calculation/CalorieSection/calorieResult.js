@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styleCalorie from "./calorieResult.module.css";
 import CalorieChart from "./CalorieChart/calorieChart";
-import InvalidModal from "./InvalidModal/invalidModal";
 
 function CalorieResult({ details, bmrResult, bmiResult }) {
   const [value, setValue] = useState("Sedentary");
   const [isFormFulfilled, setIsFormFulFilled] = useState(false);
   const [maintainCalorie, setMaintainCalorie] = useState();
+  const [calorieGoal, setCalorieGoal] = useState();
 
   function onDropdownChange(e) {
     setValue(e.target.value);
   }
+
+  const calorieGoalDeficit = calorieGoal === "deficit";
 
   // console.log(Object.keys(details) === "");
 
@@ -47,13 +49,59 @@ function CalorieResult({ details, bmrResult, bmiResult }) {
 
   return (
     <div>
-      <h3 className="text-dark fs-2 fw-bold mt-5 mb-4">
+      <h3
+        className={`text-dark fs-2 fw-bold mt-5 mb-4 ${styleCalorie.fontStyleTitle}`}
+      >
         Calculate your Calories
       </h3>
+      <p className="fs-5">
+        The provided details above are automatically applied here
+      </p>
       {/* <InvalidModal /> */}
       <div className="d-block d-md-flex justify-content-around">
         <div className={`w-50 ${styleCalorie.inputCalorieSectionWidth}`}>
           <form onSubmit={submitBmrHandler}>
+            {/* Radio Button */}
+            <div className="w-100 w-sm-50 mb-3">
+              <label className="text-secondary me-4 fs-5 fw-bold mb-2">
+                What is your Calorie Goal?
+              </label>
+              <div className="me-3 d-flex">
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="calorieGoal"
+                    id="flexRadioDefault1"
+                    value="deficit"
+                    required
+                    onChange={(e) => {
+                      setCalorieGoal(e.target.value);
+                    }}
+                  />
+                  <label className="form-check-label me-2 fw-bold text-dark">
+                    Calorie Deficit
+                  </label>
+                </div>
+                <div className="form-check">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="calorieGoal"
+                    value="surplus"
+                    required
+                    id="flexRadioDefault2"
+                    onChange={(e) => {
+                      setCalorieGoal(e.target.value);
+                    }}
+                  />
+                  <label className="form-check-label fw-bold text-dark">
+                    Calorie Surplus
+                  </label>
+                </div>
+              </div>
+            </div>
+            {/* Dropdown Menu */}
             <div className="dropdown">
               <button
                 className={`d-flex justify-content-between align-items-center text-start btn btn-secondary dropdown-toggle fs-5 py-2 px-3 ${styleCalorie.calorieWidth}`}
@@ -149,11 +197,14 @@ function CalorieResult({ details, bmrResult, bmiResult }) {
             </div>
           </div>
         </div>
-        <div className={`pt-3 pt-md-0`}>
-          <CalorieChart
-            isFormFulfilled={isFormFulfilled}
-            bmrResult={bmrResult}
-          />
+        <div className="pt-3 pt-md-0">
+          {
+            <CalorieChart
+              isFormFulfilled={isFormFulfilled}
+              maintainCalorie={maintainCalorie}
+              calorieGoal={calorieGoal}
+            />
+          }
         </div>
       </div>
     </div>

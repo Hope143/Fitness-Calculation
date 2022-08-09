@@ -1,5 +1,5 @@
-import BmiResult from "./bmiResult";
-import CalorieResult from "./calorieResult";
+import BmiResult from "./BMIsection/bmiResult";
+import CalorieResult from "./CalorieSection/calorieResult";
 import calc from "./calculation.module.css";
 import { useState } from "react";
 

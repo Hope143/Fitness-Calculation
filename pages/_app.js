@@ -1,9 +1,9 @@
 import "../styles/globals.css";
-import '../components/frontpage';
+import "../components/frontpage";
 import "bootstrap/dist/css/bootstrap.css";
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 import { useEffect } from "react";
-
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   // Place this in the pages/_app.js file

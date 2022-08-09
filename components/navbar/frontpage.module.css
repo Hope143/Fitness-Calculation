@@ -1,3 +1,9 @@
+.navbarFont {
+  font-family: "Libre Baskerville", serif;
+  font-size: 25px !important;
+  font-weight: 700;
+}
+
 .embededText {
   position: absolute;
   top: 0%;
@@ -12,6 +18,8 @@
 }
 
 .forBorder {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700 !important;
   border-bottom: 3px solid transparent;
   border-top: 3px solid transparent;
   border-image: linear-gradient(
@@ -32,5 +40,13 @@
 @media (min-width: 200px) and (max-width: 575px) {
   .embededText {
     position: relative;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbarFont {
+    font-family: "Libre Baskerville", serif;
+    font-size: 20px !important;
+    font-weight: 700;
   }
 }
