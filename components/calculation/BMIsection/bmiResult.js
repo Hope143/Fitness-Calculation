@@ -113,8 +113,9 @@ function inputData({
                     <input
                       className="form-control  fw-bold"
                       type="number"
-                      required
+                      step=".01"
                       name="age"
+                      required
                       value={details.age}
                       onChange={HandleChange}
                     />

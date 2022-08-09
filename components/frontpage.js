@@ -1,6 +1,7 @@
 import picture from "/img/gym.jpg";
 import Image from "next/image";
 import frontpage from "./navbar/frontpage.module.css";
+import Link from "next/link";
 
 function FrontPage() {
   return (

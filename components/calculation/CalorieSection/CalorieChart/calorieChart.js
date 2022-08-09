@@ -1,13 +1,9 @@
-import { useEffect, useState } from "react";
-
 function calorieChart({ isFormFulfilled, maintainCalorie, calorieGoal }) {
   const calorieDeficit = calorieGoal === "deficit";
   return (
     <>
       <div
-        className={`text-center px-lg-5 ${
-          isFormFulfilled ? "" : "invisible"
-        }`}
+        className={`text-center px-lg-5 ${isFormFulfilled ? "" : "invisible"}`}
       >
         <label className="text-info fs-5 fw-bold">
           Goal : {calorieDeficit ? "Calorie Deficit" : "Calorie Surplus"}

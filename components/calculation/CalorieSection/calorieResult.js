@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styleCalorie from "./calorieResult.module.css";
 import CalorieChart from "./CalorieChart/calorieChart";
+import InvalidModal from "./InvalidModal/invalidModal";
 
 function CalorieResult({ details, bmrResult, bmiResult }) {
   const [value, setValue] = useState("Sedentary");
-  const [isFormFulfilled, setIsFormFulFilled] = useState(false);
+  const [detailsUpdate, setDetailsUpdate] = useState(details);
+  const [isFormFulfilled, setIsFormFulFilled] = useState();
+  const [errorDetect, setErrorDetect] = useState(false);
   const [maintainCalorie, setMaintainCalorie] = useState();
   const [calorieGoal, setCalorieGoal] = useState();
 
@@ -12,23 +15,31 @@ function CalorieResult({ details, bmrResult, bmiResult }) {
     setValue(e.target.value);
   }
 
-  const calorieGoalDeficit = calorieGoal === "deficit";
-
   // console.log(Object.keys(details) === "");
 
-  function FormFulfilled() {
+  useEffect(() => {
     for (const key in details) {
-      if (bmiResult === undefined || details[key] === "") {
-        setIsFormFulFilled(false);
+      console.log(details[key]);
+      if (details[key] == "") {
+        setErrorDetect(true);
       } else {
-        setIsFormFulFilled(true);
+        setErrorDetect(false);
       }
+    }
+  }, [details]);
+
+  function FormFulfilled() {
+    if (bmiResult === undefined) {
+      setIsFormFulFilled(false);
+    } else {
+      setIsFormFulFilled(true);
     }
   }
 
   async function submitBmrHandler(event) {
     event.preventDefault();
-    await FormFulfilled();
+    FormFulfilled();
+
     if (value === "Sedentary") {
       const result = (bmrResult * 1.2).toFixed(0);
       setMaintainCalorie(result);
@@ -54,6 +65,7 @@ function CalorieResult({ details, bmrResult, bmiResult }) {
       >
         Calculate your Calories
       </h3>
+      {/* <InvalidModal isFormFulfilled={isFormFulfilled} /> */}
       <p className="fs-5">
         The provided details above are automatically applied here
       </p>
@@ -168,9 +180,16 @@ function CalorieResult({ details, bmrResult, bmiResult }) {
                 </li>
               </ul>
             </div>
-            <button type="submit" className="my-3 btn btn-primary">
+            <button
+              type="submit"
+              className="my-3 btn btn-primary"
+              data-bs-toggle={`${errorDetect ? "modal" : ""}`}
+              data-bs-target={`${errorDetect ? "#exampleModal" : ""}`}
+            >
               Calculate
             </button>
+            {/* <!-- Modal --> */}
+            <InvalidModal />
           </form>
           <div className="row w-100 m-auto border border-white shadow text-secondary fs-5 fw-bold text-dark text-center">
             <p className="col p-2 bg-dark text-light mb-0">

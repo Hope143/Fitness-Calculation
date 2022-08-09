@@ -1,0 +1,9 @@
+.areaOfModal {
+  margin: auto;
+  margin-top: 10rem;
+  background-color: light;
+}
+
+.visibility {
+  visibility: hidden;
+}
