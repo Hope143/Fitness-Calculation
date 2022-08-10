@@ -1,5 +1,4 @@
 import navbarStyle from "./frontpage.module.css";
-import Head from "next/head";
 
 function navbar() {
   return (
@@ -20,7 +19,12 @@ function navbar() {
           </button>
 
           <div id="navmenu" className="collapse navbar-collapse">
-            <ul className="navbar-nav ms-auto well">
+            <ul className={`navbar-nav ms-auto well ${navbarStyle.linksFont}`}>
+              <li className="nav-item">
+                <a href="#learn" className="nav-link">
+                  Home
+                </a>
+              </li>
               <li className="nav-item">
                 <a href="#learn" className="nav-link">
                   What Youll Learn

@@ -1,7 +1,15 @@
 .navbarFont {
-  font-family: "Libre Baskerville", serif;
-  font-size: 25px !important;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 23px;
   font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.linksFont {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
 }
 
 .embededText {

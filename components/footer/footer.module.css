@@ -1,0 +1,49 @@
+.footerLogoFont {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.infoFont {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500 !important;
+  font-size: 14px;
+}
+
+.copyRight {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.linkedin:hover {
+  transition: 0.2s;
+  color: #0a66c2;
+}
+
+.facebook:hover {
+  transition: 0.2s;
+  color: #1877f2;
+}
+
+.instagram:hover {
+  transition: 0.2s;
+  color: #c32aa3;
+}
+
+.youtube:hover {
+  transition: 0.2s;
+  color: #ff0000;
+}
+
+.twitter:hover {
+  transition: 0.2s;
+  color: #1da1f2;
+}
+
+@media screen and (max-width: 991px) {
+  .brTag {
+    display: none;
+  }
+}
