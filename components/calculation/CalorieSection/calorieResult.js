@@ -3,13 +3,19 @@ import styleCalorie from "./calorieResult.module.css";
 import CalorieChart from "./CalorieChart/calorieChart";
 import InvalidModal from "./InvalidModal/invalidModal";
 
-function CalorieResult({ details, bmrResult, bmiResult }) {
+function CalorieResult({
+  details,
+  bmrResult,
+  bmiResult,
+  isFormFulfilled,
+  setIsFormFulFilled,
+  maintainCalorie,
+  setMaintainCalorie,
+  calorieGoal,
+  setCalorieGoal,
+}) {
   const [value, setValue] = useState("Sedentary");
-  const [detailsUpdate, setDetailsUpdate] = useState(details);
-  const [isFormFulfilled, setIsFormFulFilled] = useState();
   const [errorDetect, setErrorDetect] = useState(false);
-  const [maintainCalorie, setMaintainCalorie] = useState();
-  const [calorieGoal, setCalorieGoal] = useState();
 
   function onDropdownChange(e) {
     setValue(e.target.value);

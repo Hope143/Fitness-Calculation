@@ -1,5 +1,6 @@
 import BmiResult from "./BMIsection/bmiResult";
 import CalorieResult from "./CalorieSection/calorieResult";
+import DietSection from "./DietSection/dietSection";
 import calc from "./calculation.module.css";
 import { useState } from "react";
 
@@ -12,6 +13,9 @@ function Calculation() {
     age: "",
     gender: "",
   });
+  const [isFormFulfilled, setIsFormFulFilled] = useState();
+  const [maintainCalorie, setMaintainCalorie] = useState();
+  const [calorieGoal, setCalorieGoal] = useState();
 
   return (
     <section
@@ -30,6 +34,17 @@ function Calculation() {
           details={details}
           bmrResult={bmrResult}
           bmiResult={bmiResult}
+          isFormFulfilled={isFormFulfilled}
+          setIsFormFulFilled={setIsFormFulFilled}
+          maintainCalorie={maintainCalorie}
+          setMaintainCalorie={setMaintainCalorie}
+          calorieGoal={calorieGoal}
+          setCalorieGoal={setCalorieGoal}
+        />
+        <DietSection
+          isFormFulfilled={isFormFulfilled}
+          calorieGoal={calorieGoal}
+          maintainCalorie={maintainCalorie}
         />
       </div>
     </section>
