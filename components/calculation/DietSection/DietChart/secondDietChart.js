@@ -40,28 +40,28 @@ function SecondDietChart({ isFormFulfilled, calorieGoal, maintainCalorie }) {
                 </th>
                 <td>
                   <span className="fw-bold">
-                    {(maintainCalorie * 7 * 0.164).toFixed(0)}
+                    {(maintainCalorie * 7 * 0.1272).toFixed(0)}
                   </span>{" "}
                   <span className="text-secondary">Calories/day</span>
                 </td>
                 {/* Mild Weight Loss */}
                 <td>
                   <span className="fw-bold">
-                    {((maintainCalorie - 250) * 7 * 0.164).toFixed(0)}
+                    {((maintainCalorie - 250) * 7 * 0.1272).toFixed(0)}
                   </span>{" "}
                   <span className="text-secondary">Calories/day</span>
                 </td>
                 {/*Weight Loss */}
                 <td>
                   <span className="fw-bold">
-                    {((maintainCalorie - 500) * 7 * 0.164).toFixed(0)}
+                    {((maintainCalorie - 500) * 7 * 0.1272).toFixed(0)}
                   </span>{" "}
                   <span className="text-secondary">Calories/day</span>
                 </td>
                 {/* Extreme Weight Loss */}
                 <td>
                   <span className="fw-bold">
-                    {((maintainCalorie - 1000) * 7 * 0.164).toFixed(0)}
+                    {((maintainCalorie - 1000) * 7 * 0.1272).toFixed(0)}
                   </span>{" "}
                   <span className="text-secondary">Calories/day</span>
                 </td>
