@@ -43,12 +43,14 @@ function Footer() {
             href="https://www.linkedin.com/in/victor-jr-higoy-6a770320b"
             className={`${footerStyle.linkedin}`}
             target="_blank"
+            rel="noreferrer"
           >
             <i className="bi bi-linkedin p-3 fs-4  pe-none"></i>
           </a>
           <a
             href="https://www.facebook.com/victor.higoy000/"
             target="_blank"
+            rel="noreferrer"
             className={`${footerStyle.facebook}`}
           >
             <i className="bi bi-facebook p-3 fs-4"></i>
@@ -57,6 +59,7 @@ function Footer() {
             href="https://www.instagram.com/victorhigoy_/"
             className={`${footerStyle.instagram}`}
             target="_blank"
+            rel="noreferrer"
           >
             <i className="bi bi-instagram p-3 fs-4"></i>
           </a>
@@ -64,6 +67,7 @@ function Footer() {
             href="https://www.youtube.com/channel/UCFh3pDZZVNATBIk4sfJqWNw"
             className={`${footerStyle.youtube}`}
             target="_blank"
+            rel="noreferrer"
           >
             <i className="bi bi-youtube p-3 fs-4"></i>
           </a>
@@ -72,7 +76,7 @@ function Footer() {
           </a>
         </div>
         <p className={`text-center pt-2 ${footerStyle.copyRight}`}>
-          Fitness Guide <i class="bi bi-c-circle"></i> 2022
+          Fitness Guide <i className="bi bi-c-circle"></i> 2022
         </p>
       </div>
     </div>
