@@ -2,7 +2,7 @@ import questionStyle from "./questions.module.css";
 
 function questions() {
   return (
-    <section className="p-0 pb-5 p-sm-5" id="questions">
+    <section className="p-0 pb-5 p-sm-5 bg-white text-dark" id="questions">
       <div className="container">
         <h3
           className={`text-dark fs-2 fw-bold mb-4 ${questionStyle.fontStyleTitle}`}
