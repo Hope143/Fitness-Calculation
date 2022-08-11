@@ -1,12 +1,8 @@
-
-
 function calorieChart({ isFormFulfilled, maintainCalorie, calorieGoal }) {
   const calorieDeficit = calorieGoal === "deficit";
   return (
     <>
-      <div
-        className={`text-center px-lg-5 ${isFormFulfilled ? "" : "invisible"}`}
-      >
+      <div className={`text-center px-lg-5`}>
         <label className="text-info fs-5 fw-bold">
           Goal : {calorieDeficit ? "Calorie Deficit" : "Calorie Surplus"}
         </label>
@@ -31,7 +27,9 @@ function calorieChart({ isFormFulfilled, maintainCalorie, calorieGoal }) {
                 Maintain Weight
               </th>
               <td style={{ backgroundColor: "#B2D3C2" }}>
-                <span className="fw-bold">{maintainCalorie}</span>{" "}
+                <span className="fw-bold">
+                  {isFormFulfilled ? maintainCalorie : "0"}
+                </span>{" "}
                 <span className="text-secondary">100%</span> <br />
                 <span className="text-secondary">Calories/day</span>
               </td>
@@ -45,9 +43,11 @@ function calorieChart({ isFormFulfilled, maintainCalorie, calorieGoal }) {
 
               <td>
                 <span className="fw-bold">
-                  {calorieDeficit
-                    ? maintainCalorie - 250
-                    : parseInt(maintainCalorie) + 250}
+                  {isFormFulfilled
+                    ? calorieDeficit
+                      ? maintainCalorie - 250
+                      : parseInt(maintainCalorie) + 250
+                    : "0"}
                 </span>{" "}
                 <span className="text-secondary">
                   {calorieDeficit ? "90%" : "110%"}
@@ -64,9 +64,11 @@ function calorieChart({ isFormFulfilled, maintainCalorie, calorieGoal }) {
               </th>
               <td>
                 <span className="fw-bold">
-                  {calorieDeficit
-                    ? maintainCalorie - 500
-                    : parseInt(maintainCalorie) + 500}
+                  {isFormFulfilled
+                    ? calorieDeficit
+                      ? maintainCalorie - 500
+                      : parseInt(maintainCalorie) + 500
+                    : "0"}
                 </span>{" "}
                 <span className="text-secondary">
                   {calorieDeficit ? "80%" : "120%"}
@@ -83,9 +85,11 @@ function calorieChart({ isFormFulfilled, maintainCalorie, calorieGoal }) {
               </th>
               <td>
                 <span className="fw-bold">
-                  {calorieDeficit
-                    ? maintainCalorie - 1000
-                    : parseInt(maintainCalorie) + 1000}
+                  {isFormFulfilled
+                    ? calorieDeficit
+                      ? maintainCalorie - 1000
+                      : parseInt(maintainCalorie) + 1000
+                    : "0"}
                 </span>{" "}
                 <span className="text-secondary">
                   {calorieDeficit ? "59%" : "141%"}

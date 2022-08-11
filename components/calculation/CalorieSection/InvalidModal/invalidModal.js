@@ -1,8 +1,6 @@
 import React from "react";
-import invalidModal from "./invalidModal.module.css";
 
 function InvalidModal({ isFormFulfilled }) {
-  console.log(isFormFulfilled);
   return (
     <div
       className="modal fade"
@@ -15,7 +13,8 @@ function InvalidModal({ isFormFulfilled }) {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title fs-3" id="exampleModalLabel">
-              Warning <i className="bi bi-exclamation-triangle-fill text-warning fs-3"></i>
+              Warning{" "}
+              <i className="bi bi-exclamation-triangle-fill text-warning fs-3"></i>
             </h5>
             <button
               type="button"
@@ -34,7 +33,7 @@ function InvalidModal({ isFormFulfilled }) {
               className="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Close
+              <a href="#bmiForm">Close</a>
             </button>
           </div>
         </div>

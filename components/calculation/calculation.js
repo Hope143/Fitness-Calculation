@@ -19,7 +19,7 @@ function Calculation() {
 
   return (
     <section
-      id="enroll"
+      id="calculator"
       className={`p-5 px-md-1 px-lg-5 bg-light text-dark ${calc.paddingCal}`}
     >
       <div className="container-lg">

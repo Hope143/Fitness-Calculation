@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/globals.css";
-import "../components/frontpage";
 
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useEffect } from "react";

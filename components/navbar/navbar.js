@@ -1,11 +1,11 @@
-import navbarStyle from "./frontpage.module.css";
+import navbarStyle from "../frontpage/frontpage.module.css";
 
 function navbar() {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div className="container">
-          <a href="#" className={`navbar-brand ${navbarStyle.navbarFont}`}>
+          <a href="#home" className={`navbar-brand ${navbarStyle.navbarFont}`}>
             Fitness.Guide
           </a>
 
@@ -21,23 +21,18 @@ function navbar() {
           <div id="navmenu" className="collapse navbar-collapse">
             <ul className={`navbar-nav ms-auto well ${navbarStyle.linksFont}`}>
               <li className="nav-item">
-                <a href="#learn" className="nav-link">
+                <a href="#home" className="nav-link">
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#learn" className="nav-link">
-                  What Youll Learn
+                <a href="#calculator" className="nav-link">
+                  Calculator
                 </a>
               </li>
               <li className="nav-item">
                 <a href="#questions" className="nav-link">
                   Questions
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#instructors" className="nav-link">
-                  Instructors
                 </a>
               </li>
             </ul>

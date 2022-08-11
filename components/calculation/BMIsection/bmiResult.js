@@ -54,7 +54,7 @@ function inputData({
   }
 
   return (
-    <div>
+    <div id="bmiForm">
       <h3
         className={`text-dark fs-2 fw-bold mb-4 ${styleCalorie.fontStyleTitle}`}
       >

@@ -4,10 +4,10 @@ import styleCalorie from "../../CalorieSection/calorieResult.module.css";
 function SecondDietChart({ isFormFulfilled, calorieGoal, maintainCalorie }) {
   const calorieDeficit = calorieGoal === "deficit";
 
+  const weightGoal = [0, 250, 500, 1000];
+
   return (
-    <div
-      className={`text-center px-lg-3 ${isFormFulfilled ? "" : "invisible"}`}
-    >
+    <div className="text-center px-lg-3">
       <div>
         <h2
           className={`text-dark fs-6 text-center fw-bold mb-4 ${styleCalorie.fontSizeSubTitle}`}
@@ -38,299 +38,158 @@ function SecondDietChart({ isFormFulfilled, calorieGoal, maintainCalorie }) {
                 <th scope="row" className="h-100 my-auto">
                   Sunday
                 </th>
-                <td>
-                  <span className="fw-bold">
-                    {(maintainCalorie * 7 * 0.1272).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Mild Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {((maintainCalorie - 250) * 7 * 0.1272).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/*Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {((maintainCalorie - 500) * 7 * 0.1272).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Extreme Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {((maintainCalorie - 1000) * 7 * 0.1272).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
+
+                {weightGoal &&
+                  weightGoal.map((calorieGoal) => {
+                    return (
+                      <>
+                        <td>
+                          <span className="fw-bold">
+                            {isFormFulfilled
+                              ? (
+                                  (parseInt(maintainCalorie) - calorieGoal) *
+                                  7 *
+                                  0.1272
+                                ).toFixed(0)
+                              : "0"}{" "}
+                          </span>
+                          <span className="text-secondary">Calories/day</span>
+                        </td>
+                      </>
+                    );
+                  })}
               </tr>
               <tr scope="row">
                 <th scope="row">Monday</th>
-                <td>
-                  <span className="fw-bold">
-                    {(maintainCalorie * 7 * 0.1377).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Mild Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 250) * 7 * 0.1377).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 250) *
-                          7 *
-                          0.1377
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/*Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 500) * 7 * 0.1377).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 500) *
-                          7 *
-                          0.1377
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Extremely Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 1000) * 7 * 0.1377).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 1000) *
-                          7 *
-                          0.1377
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
+                {weightGoal &&
+                  weightGoal.map((calorieGoal) => {
+                    return (
+                      <>
+                        <td>
+                          <span className="fw-bold">
+                            {isFormFulfilled
+                              ? (
+                                  (parseInt(maintainCalorie) - calorieGoal) *
+                                  7 *
+                                  0.1377
+                                ).toFixed(0)
+                              : "0"}{" "}
+                          </span>
+                          <span className="text-secondary">Calories/day</span>
+                        </td>
+                      </>
+                    );
+                  })}
               </tr>
               <tr scope="row">
                 <th scope="row">Tuesday</th>
-                <td>
-                  <span className="fw-bold">
-                    {(maintainCalorie * 7 * 0.148).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Mild Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 250) * 7 * 0.148).toFixed(0)
-                      : ((parseInt(maintainCalorie) + 250) * 7 * 0.148).toFixed(
-                          0
-                        )}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/*Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 500) * 7 * 0.148).toFixed(0)
-                      : ((parseInt(maintainCalorie) + 500) * 7 * 0.148).toFixed(
-                          0
-                        )}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Extremely Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 1000) * 7 * 0.148).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 1000) *
-                          7 *
-                          0.148
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
+                {weightGoal &&
+                  weightGoal.map((calorieGoal) => {
+                    return (
+                      <>
+                        <td>
+                          <span className="fw-bold">
+                            {isFormFulfilled
+                              ? (
+                                  (parseInt(maintainCalorie) - calorieGoal) *
+                                  7 *
+                                  0.148
+                                ).toFixed(0)
+                              : "0"}{" "}
+                          </span>
+                          <span className="text-secondary">Calories/day</span>
+                        </td>
+                      </>
+                    );
+                  })}
               </tr>
               <tr scope="row">
                 <th scope="row">Wednesday</th>
-                <td>
-                  <span className="fw-bold">
-                    {(maintainCalorie * 7 * 0.1585).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Mild Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 250) * 7 * 0.1585).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 250) *
-                          7 *
-                          0.1585
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/*Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 500) * 7 * 0.1585).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 500) *
-                          7 *
-                          0.1585
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Extremely Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 1000) * 7 * 0.1585).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 1000) *
-                          7 *
-                          0.1585
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
+                {weightGoal &&
+                  weightGoal.map((calorieGoal) => {
+                    return (
+                      <>
+                        <td>
+                          <span className="fw-bold">
+                            {isFormFulfilled
+                              ? (
+                                  (parseInt(maintainCalorie) - calorieGoal) *
+                                  7 *
+                                  0.1585
+                                ).toFixed(0)
+                              : "0"}{" "}
+                          </span>
+                          <span className="text-secondary">Calories/day</span>
+                        </td>
+                      </>
+                    );
+                  })}
               </tr>
               <tr scope="row">
                 <th scope="row">Thursday</th>
-                <td>
-                  <span className="fw-bold">
-                    {(maintainCalorie * 7 * 0.1533).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Mild Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 250) * 7 * 0.1533).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 250) *
-                          7 *
-                          0.1533
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/*Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 500) * 7 * 0.1533).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 500) *
-                          7 *
-                          0.1533
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Extremely Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 1000) * 7 * 0.1533).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 1000) *
-                          7 *
-                          0.1533
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
+                {weightGoal &&
+                  weightGoal.map((calorieGoal) => {
+                    return (
+                      <>
+                        <td>
+                          <span className="fw-bold">
+                            {isFormFulfilled
+                              ? (
+                                  (parseInt(maintainCalorie) - calorieGoal) *
+                                  7 *
+                                  0.1533
+                                ).toFixed(0)
+                              : "0"}{" "}
+                          </span>
+                          <span className="text-secondary">Calories/day</span>
+                        </td>
+                      </>
+                    );
+                  })}
               </tr>
               <tr scope="row">
                 <th scope="row">Friday</th>
-                <td>
-                  <span className="fw-bold">
-                    {(maintainCalorie * 7 * 0.1429).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Mild Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 250) * 7 * 0.1429).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 250) *
-                          7 *
-                          0.1429
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/*Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 500) * 7 * 0.1429).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 500) *
-                          7 *
-                          0.1429
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Extremely Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {calorieDeficit
-                      ? ((maintainCalorie - 1000) * 7 * 0.1429).toFixed(0)
-                      : (
-                          (parseInt(maintainCalorie) + 1000) *
-                          7 *
-                          0.1429
-                        ).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
+                {weightGoal &&
+                  weightGoal.map((calorieGoal) => {
+                    return (
+                      <>
+                        <td>
+                          <span className="fw-bold">
+                            {isFormFulfilled
+                              ? (
+                                  (parseInt(maintainCalorie) - calorieGoal) *
+                                  7 *
+                                  0.1429
+                                ).toFixed(0)
+                              : "0"}{" "}
+                          </span>
+                          <span className="text-secondary">Calories/day</span>
+                        </td>
+                      </>
+                    );
+                  })}
               </tr>
               <tr scope="row">
                 <th scope="row">Saturday</th>
-                <td>
-                  <span className="fw-bold">
-                    {(maintainCalorie * 7 * 0.1324).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Mild Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {((maintainCalorie - 250) * 7 * 0.1324).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/*Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {((maintainCalorie - 500) * 7 * 0.1324).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
-                {/* Extreme Weight Loss */}
-                <td>
-                  <span className="fw-bold">
-                    {((maintainCalorie - 1000) * 7 * 0.1324).toFixed(0)}
-                  </span>{" "}
-                  <span className="text-secondary">Calories/day</span>
-                </td>
+                {weightGoal &&
+                  weightGoal.map((calorieGoal) => {
+                    return (
+                      <>
+                        <td>
+                          <span className="fw-bold">
+                            {isFormFulfilled
+                              ? (
+                                  (parseInt(maintainCalorie) - calorieGoal) *
+                                  7 *
+                                  0.1324
+                                ).toFixed(0)
+                              : "0"}{" "}
+                          </span>
+                          <span className="text-secondary">Calories/day</span>
+                        </td>
+                      </>
+                    );
+                  })}
               </tr>
             </tbody>
           </table>

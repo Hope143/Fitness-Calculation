@@ -3,37 +3,31 @@ import styleCalorie from "../../CalorieSection/calorieResult.module.css";
 
 function FirstDietChart({ isFormFulfilled, calorieGoal, maintainCalorie }) {
   const calorieDeficit = calorieGoal === "deficit";
+
+  const weightGoal = [0, 250, 500, 1000];
+
   function SundayAndSaturdayResult() {
     return (
       <Fragment>
-        {/* Maintain Weight */}
-        <td>
-          <span className="fw-bold">
-            {(maintainCalorie * 7 * 0.164).toFixed(0)}
-          </span>{" "}
-          <span className="text-secondary">Calories/day</span>
-        </td>
-        {/* Mild Weight Loss */}
-        <td>
-          <span className="fw-bold">
-            {((maintainCalorie - 250) * 7 * 0.164).toFixed(0)}
-          </span>{" "}
-          <span className="text-secondary">Calories/day</span>
-        </td>
-        {/*Weight Loss */}
-        <td>
-          <span className="fw-bold">
-            {((maintainCalorie - 500) * 7 * 0.164).toFixed(0)}
-          </span>{" "}
-          <span className="text-secondary">Calories/day</span>
-        </td>
-        {/* Extreme Weight Loss */}
-        <td>
-          <span className="fw-bold">
-            {((maintainCalorie - 1000) * 7 * 0.164).toFixed(0)}
-          </span>{" "}
-          <span className="text-secondary">Calories/day</span>
-        </td>
+        {weightGoal &&
+          weightGoal.map((calorieGoal) => {
+            return (
+              <>
+                <td>
+                  <span className="fw-bold">
+                    {isFormFulfilled
+                      ? (
+                          (parseInt(maintainCalorie) - calorieGoal) *
+                          7 *
+                          0.164
+                        ).toFixed(0)
+                      : "0"}{" "}
+                  </span>
+                  <span className="text-secondary">Calories/day</span>
+                </td>
+              </>
+            );
+          })}
       </Fragment>
     );
   }
@@ -41,48 +35,31 @@ function FirstDietChart({ isFormFulfilled, calorieGoal, maintainCalorie }) {
   function MondayToFridayResult() {
     return (
       <Fragment>
-        {/* Maintain */}
-        <td>
-          <span className="fw-bold">
-            {(maintainCalorie * 7 * 0.1344).toFixed(0)}
-          </span>{" "}
-          <span className="text-secondary">Calories/day</span>
-        </td>
-        {/* Mild Weight Loss */}
-        <td>
-          <span className="fw-bold">
-            {calorieDeficit
-              ? ((maintainCalorie - 250) * 7 * 0.1344).toFixed(0)
-              : ((parseInt(maintainCalorie) + 250) * 7 * 0.1344).toFixed(0)}
-          </span>{" "}
-          <span className="text-secondary">Calories/day</span>
-        </td>
-        {/*Weight Loss */}
-        <td>
-          <span className="fw-bold">
-            {calorieDeficit
-              ? ((maintainCalorie - 500) * 7 * 0.1344).toFixed(0)
-              : ((parseInt(maintainCalorie) + 500) * 7 * 0.1344).toFixed(0)}
-          </span>{" "}
-          <span className="text-secondary">Calories/day</span>
-        </td>
-        {/* Extremely Weight Loss */}
-        <td>
-          <span className="fw-bold">
-            {calorieDeficit
-              ? ((maintainCalorie - 1000) * 7 * 0.1344).toFixed(0)
-              : ((parseInt(maintainCalorie) + 1000) * 7 * 0.1344).toFixed(0)}
-          </span>{" "}
-          <span className="text-secondary">Calories/day</span>
-        </td>
+        {weightGoal &&
+          weightGoal.map((calorieGoal) => {
+            return (
+              <>
+                <td>
+                  <span className="fw-bold">
+                    {isFormFulfilled
+                      ? (
+                          (parseInt(maintainCalorie) - calorieGoal) *
+                          7 *
+                          0.1344
+                        ).toFixed(0)
+                      : "0"}{" "}
+                  </span>
+                  <span className="text-secondary">Calories/day</span>
+                </td>
+              </>
+            );
+          })}
       </Fragment>
     );
   }
 
   return (
-    <div
-      className={`text-center px-lg-3 ${isFormFulfilled ? "" : "invisible"}`}
-    >
+    <div className="text-center px-lg-3 ">
       <div>
         <h2
           className={`text-dark fs-6 text-center fw-bold mb-4 ${styleCalorie.fontSizeSubTitle}`}

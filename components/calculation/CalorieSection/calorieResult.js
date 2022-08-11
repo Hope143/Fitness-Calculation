@@ -21,11 +21,10 @@ function CalorieResult({
     setValue(e.target.value);
   }
 
-  // console.log(Object.keys(details) === "");
+ 
 
   useEffect(() => {
     for (const key in details) {
-      console.log(details[key]);
       if (details[key] == "") {
         setErrorDetect(true);
       } else {

@@ -1,11 +1,13 @@
-import picture from "/img/gym.jpg";
+import picture from "../../img/gym.jpg";
 import Image from "next/image";
-import frontpage from "./navbar/frontpage.module.css";
-import Link from "next/link";
+import frontpage from "./frontpage.module.css";
 
 function FrontPage() {
   return (
-    <section className="bg-dark text-light p-5 p-sm-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <section
+      className="bg-dark text-light p-5 p-sm-5 p-lg-0 pt-lg-5 text-center text-sm-start"
+      id="home"
+    >
       <div className="container">
         <div className="d-sm-flex align-items-center justify-content-between position-relative">
           <div className="d-none d-sm-block">
