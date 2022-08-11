@@ -35,12 +35,10 @@ function FrontPage() {
                   reliable and factual recommendation about proper diet and
                   training that may depends on your body goal
                 </p>
-                <button
-                  className="btn btn-primary btn-lg"
-                  data-bs-toggle="modal"
-                  data-bs-target="#enroll"
-                >
-                  Start your Journey <i className="bi bi-arrow-bar-right"></i>
+                <button className="btn btn-primary btn-lg">
+                  <a href="#calculator" className="text-light">
+                    Start your Journey <i className="bi bi-arrow-bar-right"></i>
+                  </a>
                 </button>
               </div>
             </div>
