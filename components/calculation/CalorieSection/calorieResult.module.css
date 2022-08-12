@@ -1,10 +1,21 @@
-.fontSizeSubTitle {
-  font-family: "Ubuntu", sans-serif;
+.fontStyleTitle {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700 !important;
+  font-size: 120px;
+  color: #acacac80;
+  line-height: 7rem;
+  text-shadow:5px 5px #e0dfdf80 !important;
 }
 
-.fontStyleTitle {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700 !important;
+.fontSizeSubTitle {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 25px !important;
+}
+
+.line {
+  border-bottom: 10px solid #212124;
+  display: block;
+  margin: auto;
 }
 
 .calorieWidth {
@@ -31,5 +42,31 @@
 @media screen and (max-width: 767px) {
   .inputCalorieSectionWidth {
     width: 100% !important;
+  }
+
+  .fontStyleTitle {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700 !important;
+    font-size: 90px;
+    color: #acacac80;
+    line-height: 6rem;
+  }
+
+  .line {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .fontStyleTitle {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700 !important;
+    font-size: 60px;
+    color: #acacac80;
+    line-height: 4rem;
+  }
+
+  .line {
+    display: none;
   }
 }

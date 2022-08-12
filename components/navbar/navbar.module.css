@@ -1,0 +1,20 @@
+.navbarFont {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+}
+
+.linksFont {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.navLinks Link:focus,
+.navLinks Link:active,
+.navLinks Link:hover {
+  color: white !important;
+}

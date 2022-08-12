@@ -55,11 +55,14 @@ function inputData({
 
   return (
     <div id="bmiForm">
-      <h3
-        className={`text-dark fs-2 fw-bold mb-4 ${styleCalorie.fontStyleTitle}`}
-      >
-        Calculate your BMI
-      </h3>
+      <div className="d-flex">
+        <div>
+          <h3 className={` fw-bold mb-4 pe-5 ${styleCalorie.fontStyleTitle}`}>
+            CALCULATE BMI
+          </h3>
+        </div>
+        <span className={`w-100 ${styleCalorie.line}`}></span>
+      </div>
       <div className="d-block d-md-flex justify-content-around">
         <div
           className={`w-50 me-0 me-md-2 me-lg-0 ${styleCalorie.inputCalorieSectionWidth}`}

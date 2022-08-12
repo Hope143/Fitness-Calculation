@@ -1,24 +1,52 @@
-import picture from "../../img/gym.jpg";
+import picture from "../../img/weightlift.jpg";
 import Image from "next/image";
 import frontpage from "./frontpage.module.css";
+import Link from "next/link";
 
 function FrontPage() {
   return (
     <section
-      className="bg-dark text-light p-5 p-sm-5 p-lg-0 pt-lg-5 text-center text-sm-start"
+      className="bg-dark p-auto m-auto text-light text-center text-sm-start h-100"
       id="home"
     >
-      <div className="container">
-        <div className="d-sm-flex align-items-center justify-content-between position-relative">
+      <div
+        className={`d-flex justify-content-center position-relative ${frontpage.imageBgColor}`}
+      >
+        <div className="position-relative">
           <div className="d-none d-sm-block">
             <Image
-              className={`img-fluid w-50 d-none d-sm-block ${frontpage.image}`}
-              width="1750px"
-              height="1200px"
+              className={`img-fluid ${frontpage.image}`}
+              width="1450px"
+              height="950px"
+              // width="1750px"
+              // height="1200px"
               src={picture}
               alt="gym.jpg"
             />
           </div>
+          <div
+            className={`position-sm-absolute text-start ${frontpage.embededText}`}
+          >
+            <h3 className={`${frontpage.title}`}>
+              BE GUIDED BEFORE GO EXHAUSTED
+            </h3>
+            <p
+              className={`text-center text-sm-start lead my-xs-1 my-md-4 my-lg-5 ${frontpage.paragraph}`}
+            >
+              Computation of your BMI (Body Mass Index), BMR (Basal Metabolic
+              Rate), and Calories. It also gives the ideal recommended diet to
+              achieve a certain fitness goal.
+            </p>
+            <Link href="#calculator" className="text-light">
+              <button className={`btn btn-light btn-lg ${frontpage.link}`}>
+                Start your Journey <i className="bi bi-arrow-bar-right"></i>
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="d-sm-flex align-items-center justify-content-between">
           <div
             className={`xs-position-static sm-position-absolute ${frontpage.embededText}`}
           >
@@ -43,8 +71,7 @@ function FrontPage() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
     </section>
   );
 }

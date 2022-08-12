@@ -21,8 +21,6 @@ function CalorieResult({
     setValue(e.target.value);
   }
 
- 
-
   useEffect(() => {
     for (const key in details) {
       if (details[key] == "") {
@@ -65,11 +63,14 @@ function CalorieResult({
 
   return (
     <div>
-      <h3
-        className={`text-dark fs-2 fw-bold mt-5 mb-4 ${styleCalorie.fontStyleTitle}`}
-      >
-        Calculate your Calories
-      </h3>
+      <div className="d-flex">
+        <div>
+          <h3 className={` fw-bold mb-4 pe-5 ${styleCalorie.fontStyleTitle}`}>
+            CALCULATE CALORIES
+          </h3>
+        </div>
+        <span className={`w-100 ${styleCalorie.line}`}></span>
+      </div>
       {/* <InvalidModal isFormFulfilled={isFormFulfilled} /> */}
       <p className="fs-5">
         The provided details above are automatically applied here

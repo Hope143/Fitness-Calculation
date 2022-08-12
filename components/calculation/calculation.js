@@ -20,7 +20,7 @@ function Calculation() {
   return (
     <section
       id="calculator"
-      className={`p-5 px-md-1 px-lg-5 bg-light text-dark ${calc.paddingCal}`}
+      className={`p-5 pt-0 px-md-1 px-lg-5 bg-light text-dark ${calc.paddingCal}`}
     >
       <div className="container-lg">
         <BmiResult

@@ -6,13 +6,16 @@ import SecondDietChart from "./DietChart/secondDietChart";
 function DietSection({ isFormFulfilled, calorieGoal, maintainCalorie }) {
   return (
     <div className="p-0">
-      <h3
-        className={`text-dark fs-2 fw-bold mb-4 ${styleCalorie.fontStyleTitle}`}
-      >
-        Diet Recommendation
-      </h3>
+      <div className="d-flex">
+        <div>
+          <h3 className={` fw-bold mb-4 ${styleCalorie.fontStyleTitle}`}>
+            ADVICED DIET
+          </h3>
+        </div>
+        <span className={`w-100 ${styleCalorie.line}`}></span>
+      </div>
       <h2
-        className={`text-dark fs-5 text-center fw-bold mb-4 ${styleCalorie.fontSizeSubTitle}`}
+        className={`text-dark text-center fw-bold mb-4 ${styleCalorie.fontSizeSubTitle}`}
       >
         7 Day Calories Cycle (Zig-Zag)
       </h2>
