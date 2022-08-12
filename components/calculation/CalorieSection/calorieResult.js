@@ -195,7 +195,7 @@ function CalorieResult({
               Calculate
             </button>
             {/* <!-- Modal --> */}
-            <InvalidModal />
+            <InvalidModal errorDetect={errorDetect} />
           </form>
           <div className="row w-100 m-auto border border-white shadow text-secondary fs-5 fw-bold text-dark text-center">
             <p className="col p-2 bg-dark text-light mb-0">

@@ -28,7 +28,7 @@ function Navbar() {
             <ul
               className={`navbar-nav ms-auto well text-light ${navbarStyle.linksFont}`}
             >
-              <Link href="#home" className="nav-link">
+              <Link href="/#home" className="nav-link">
                 <li
                   className={`nav-item p-2 link-secondary ${
                     router.asPath === "/#home"
@@ -39,7 +39,7 @@ function Navbar() {
                   Home
                 </li>
               </Link>
-              <Link href="#calculator" className="nav-link">
+              <Link href="/#calculator" className="nav-link">
                 <li
                   className={`nav-item p-2 link-secondary ${
                     router.asPath === "/#calculator"
@@ -50,7 +50,7 @@ function Navbar() {
                   Calculator
                 </li>
               </Link>
-              <Link href="#questions" className="nav-link">
+              <Link href="/#questions" className="nav-link">
                 <li
                   className={`nav-item p-2 link-secondary ${
                     router.asPath === "/#questions"
@@ -61,7 +61,7 @@ function Navbar() {
                   Questions
                 </li>
               </Link>
-              <Link href="/training" className="nav-link">
+              <Link href="/nutrition" className="nav-link">
                 <li
                   className={`nav-item p-2 link-secondary ${
                     router.asPath === "/training"
@@ -69,7 +69,7 @@ function Navbar() {
                       : ""
                   }`}
                 >
-                  <a>Training</a>
+                  Nutrition
                 </li>
               </Link>
             </ul>

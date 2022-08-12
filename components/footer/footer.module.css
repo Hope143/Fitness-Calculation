@@ -17,6 +17,12 @@
   font-weight: 300;
 }
 
+.buttonUp {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+}
+
 .linkedin:hover {
   transition: 0.2s;
   color: #0a66c2;
@@ -45,5 +51,21 @@
 @media screen and (max-width: 991px) {
   .brTag {
     display: none;
+  }
+}
+
+@media screen and (max-width: 874px) {
+  .buttonUp {
+    position: absolute;
+    top: 20%;
+    right: 1%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .buttonUp {
+    position: absolute;
+    top: 1%;
+    right: 1%;
   }
 }

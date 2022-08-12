@@ -7,11 +7,9 @@ import Questions from "../components/questions/questions";
 function HomePage() {
   return (
     <div>
-      <Navbar />
       <FrontPage />
       <Calculation />
       <Questions />
-      <Footer />
     </div>
   );
 }

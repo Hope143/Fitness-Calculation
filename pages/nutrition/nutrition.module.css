@@ -1,0 +1,17 @@
+.topTitle {
+  padding: 100px 0 !important;
+  background: linear-gradient(to bottom left, #008b79, #1180a1) !important;
+}
+
+.title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 85px;
+  margin-bottom: 2rem;
+}
+
+.subTitle {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 25px;
+  width: 35%;
+  margin: auto;
+}

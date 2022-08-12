@@ -2,7 +2,7 @@ import footerStyle from "./footer.module.css";
 
 function Footer() {
   return (
-    <div className="bg-dark text-light px-3 py-5 px-sm-5 py-sm-5">
+    <div className="bg-dark text-light px-3 py-5 px-sm-5 py-sm-5 position-relative">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6">
@@ -78,6 +78,16 @@ function Footer() {
         <p className={`text-center pt-2 ${footerStyle.copyRight}`}>
           Fitness Guide <i className="bi bi-c-circle"></i> 2022
         </p>
+        <div className={`${footerStyle.buttonUp}`}>
+          <button
+            type="button"
+            className="btn btn-secondary btn-lg rounded-circle"
+          >
+            <a className="text-light" href="#home">
+              <i className="bi bi-arrow-up-circle fs-2"></i>
+            </a>
+          </button>
+        </div>
       </div>
     </div>
   );

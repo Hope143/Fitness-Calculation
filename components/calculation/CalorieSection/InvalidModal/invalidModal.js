@@ -1,6 +1,7 @@
 import React from "react";
+import { useRouter } from "next/router";
 
-function InvalidModal({ isFormFulfilled }) {
+function InvalidModal({}) {
   return (
     <div
       className="modal fade"
@@ -9,7 +10,7 @@ function InvalidModal({ isFormFulfilled }) {
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div className="modal-dialog">
+      <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title fs-3" id="exampleModalLabel">
@@ -33,7 +34,7 @@ function InvalidModal({ isFormFulfilled }) {
               className="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              <a href="#bmiForm">Close</a>
+              Close
             </button>
           </div>
         </div>
