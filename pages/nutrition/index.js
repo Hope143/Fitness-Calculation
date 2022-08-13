@@ -41,7 +41,7 @@ function Nutrition(props) {
           </div>
         </div>
       </div>
-      <section className="px-2 pb-5">
+      <section className="px-2 pb-5 bg-light text-dark">
         <div className="container">
           <FeaturedPosts isFeaturedArticles={isFeaturedArticles} />
         </div>
