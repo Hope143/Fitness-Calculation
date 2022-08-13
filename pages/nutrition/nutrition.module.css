@@ -1,6 +1,8 @@
+/* NUTRITION-FRONTPAGE */
+
 .topTitle {
-  padding: 100px 0 !important;
-  background: linear-gradient(to bottom left, #008b79, #1180a1) !important;
+  padding: 50px 80px 50px 80px !important;
+  background: linear-gradient(to bottom left, #008b79, #1180a1);
 }
 
 .title {
@@ -10,8 +12,71 @@
 }
 
 .subTitle {
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: 25px;
-  width: 35%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  width: 50%;
   margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .subTitle {
+    font-size: 20px;
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .topTitle {
+    padding: 20px !important;
+  }
+
+  .title {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 70px;
+    margin-bottom: 1rem;
+  }
+
+  .subTitle {
+    font-size: 20px;
+    width: 100% !important;
+  }
+}
+
+/* NUTRITION-ARTICLE-LINKS */
+
+.articleLinks {
+  color: white;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  cursor: pointer;
+  background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0) 50%,
+      rgb(191, 98, 98) 50%
+    )
+    right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+}
+
+.articleLinks:hover {
+  background-position: left;
+}
+
+@media screen and (max-width: 820px) {
+  .unorderedlist {
+    display: block;
+    width: 54%;
+    margin: auto;
+  }
+
+  .articleLinks {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 419px) {
+  .unorderedlist {
+    width: 80%;
+  }
 }
