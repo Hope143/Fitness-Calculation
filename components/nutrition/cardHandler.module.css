@@ -1,9 +1,34 @@
 .innerCard {
-  width: 18rem;
+  width: 20rem;
+  /* margin: 5px 20px !important; */
 }
 
 .cardContainer {
   width: 100%;
   margin: auto;
   justify-content: center;
+}
+
+.title {
+  height: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.paragraph {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  color: rgb(69, 69, 69);
+  text-align: left;
+  font-weight: 400;
+}
+
+.dateAndAuthor {
+  font-weight: 600;
+}
+
+.readMore {
+  font-weight: 600;
 }

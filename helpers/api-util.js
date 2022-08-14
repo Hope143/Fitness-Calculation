@@ -25,3 +25,22 @@ export async function weightLossHandler() {
 
   return allEvents.filter((event) => event.objective === "weightLoss");
 }
+
+export async function weightGainHandler() {
+  const allEvents = await getAllArticles();
+
+  return allEvents.filter((event) => event.objective === "weightGain");
+}
+
+export async function HealthyLifestyleHandler() {
+  const allEvents = await getAllArticles();
+
+  return allEvents.filter((event) => event.objective === "healthyLifestyle");
+}
+
+
+export async function SupplementsHandler() {
+  const allEvents = await getAllArticles();
+
+  return allEvents.filter((event) => event.objective === "supplement");
+}

@@ -1,15 +1,15 @@
-import card from "./cardHandler.module.css";
+import classes from "./cardHandler.module.css";
 import { Fragment } from "react";
 import Image from "next/image";
 
 function CardHandler({ choosenArticles }) {
   return (
     <Fragment>
-      <div className={`row ${card.cardContainer}`}>
+      <div className={`row ${classes.cardContainer}`}>
         {choosenArticles &&
           choosenArticles.map((article) => (
             <div
-              className={`card m-3 mx-lg-1 mx-xl-3 mx-xxl-5 col-6 col p-0 ${card.innerCard}`}
+              className={`card m-3 mx-lg-1 mx-xl-3 mx-xxl-5 col-6 col p-0  shadow ${classes.innerCard}`}
               key={article.id}
             >
               <Image
@@ -19,15 +19,34 @@ function CardHandler({ choosenArticles }) {
                 className="card-img-top"
                 alt={article.image}
               />
-              <div className="card-body">
-                <h5 className="card-title">{article.title}</h5>
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the cards content.
+              <div className="card-body pt-1">
+                <h5 className={`card-title m-0 ${classes.title}`}>
+                  {article.title}
+                </h5>
+                <div className="d-flex text-secondary">
+                  <i className="bi bi-calendar2 fs-5"></i>
+                  <p className={`m-auto mx-2 ${classes.dateAndAuthor}`}>
+                    {article.date}
+                  </p>
+                </div>
+                <div className="d-flex text-secondary">
+                  <i className="bi bi-person-workspace fs-5"></i>
+                  <p className={`m-auto mx-2 ${classes.dateAndAuthor}`}>
+                    {article.author}
+                  </p>
+                </div>
+                <p
+                  className={`card-text m-0 text-secondary ${classes.paragraph}`}
+                >
+                  {article.shortDescription}
                 </p>
-                <a href="#" className="btn btn-primary">
-                  Go somewhere
-                </a>
+              </div>
+              <hr className="mt-2 w-75 m-auto" />
+              <div className="d-flex m-3 me-4 justify-content-end align-items-center">
+                <p className={`text-dark m-0 me-2 ${classes.readMore}`}>
+                  Read More
+                </p>
+                <i className="bi bi-box-arrow-in-right fs-5"></i>
               </div>
             </div>
           ))}

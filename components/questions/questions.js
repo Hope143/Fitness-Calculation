@@ -1,17 +1,10 @@
-import styleCalorie from "../calculation/CalorieSection/calorieResult.module.css";
+import Subtitles from "../ui/subTitle";
 
 function questions() {
   return (
     <section className="p-0 pb-5 p-sm-5 bg-white text-dark" id="questions">
       <div className="container">
-        <div className="d-flex">
-          <div>
-            <h3 className={` fw-bold mb-4 pe-5 ${styleCalorie.fontStyleTitle}`}>
-              COMMON QUESTIONS
-            </h3>
-          </div>
-          <span className={`w-100 ${styleCalorie.line}`}></span>
-        </div>
+        <Subtitles subtitle="COMMON QUESTIONS" />
         <div className="accordion accordion-flush" id="accordionFlushExample">
           <div className="accordion-item">
             <h2 className="accordion-header" id="flush-headingTwo">

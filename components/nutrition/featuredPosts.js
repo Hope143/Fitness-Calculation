@@ -1,19 +1,10 @@
-import styleCalorie from "../../components/calculation/CalorieSection/calorieResult.module.css";
 import CardHandler from "./cardHandler";
+import Subtitles from "../ui/subTitle";
 
 function FeaturedPosts({ isFeaturedArticles }) {
   return (
     <div>
-      <div className="d-flex ">
-        <div>
-          <h3
-            className={` fw-bold mb-4 pe-5 text-dark ${styleCalorie.fontStyleTitle}`}
-          >
-            Featured Articles
-          </h3>
-        </div>
-        <span className={`w-100 ${styleCalorie.line}`}></span>
-      </div>
+      <Subtitles subtitle="Featured Articles" />
       <CardHandler choosenArticles={isFeaturedArticles} />
     </div>
   );

@@ -1,19 +1,12 @@
-import React, { Fragment } from "react";
 import styleCalorie from "../CalorieSection/calorieResult.module.css";
 import FirstDietChart from "./DietChart/firstDietChart";
 import SecondDietChart from "./DietChart/secondDietChart";
+import Subtitles from "../../ui/subTitle";
 
 function DietSection({ isFormFulfilled, calorieGoal, maintainCalorie }) {
   return (
     <div className="p-0">
-      <div className="d-flex">
-        <div>
-          <h3 className={` fw-bold mb-4 ${styleCalorie.fontStyleTitle}`}>
-            ADVICED DIET
-          </h3>
-        </div>
-        <span className={`w-100 ${styleCalorie.line}`}></span>
-      </div>
+      <Subtitles subtitle="ADVICED DIET" />
       <h2
         className={`text-dark text-center fw-bold mb-4 ${styleCalorie.fontSizeSubTitle}`}
       >

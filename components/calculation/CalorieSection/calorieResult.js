@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styleCalorie from "./calorieResult.module.css";
 import CalorieChart from "./CalorieChart/calorieChart";
 import InvalidModal from "./InvalidModal/invalidModal";
+import Subtitles from "../../ui/subTitle";
 
 function CalorieResult({
   details,
@@ -63,14 +64,7 @@ function CalorieResult({
 
   return (
     <div>
-      <div className="d-flex">
-        <div>
-          <h3 className={` fw-bold mb-4 pe-5 ${styleCalorie.fontStyleTitle}`}>
-            CALCULATE CALORIES
-          </h3>
-        </div>
-        <span className={`w-100 ${styleCalorie.line}`}></span>
-      </div>
+      <Subtitles subtitle="CALCULATE CALORIES" />
       {/* <InvalidModal isFormFulfilled={isFormFulfilled} /> */}
       <p className="fs-5">
         The provided details above are automatically applied here
