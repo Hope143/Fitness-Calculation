@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 
 function Navbar() {
   const router = useRouter();
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
@@ -27,6 +28,8 @@ function Navbar() {
             >
               <Link href="/#home" className="nav-link">
                 <li
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navmenu"
                   className={`nav-item p-2 link-secondary ${
                     router.asPath === "/#home"
                       ? "link-light border-bottom border-bottom"
@@ -38,6 +41,8 @@ function Navbar() {
               </Link>
               <Link href="/#calculator" className="nav-link">
                 <li
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navmenu"
                   className={`nav-item p-2 link-secondary ${
                     router.asPath === "/#calculator"
                       ? "link-light border-bottom"
@@ -49,6 +54,8 @@ function Navbar() {
               </Link>
               <Link href="/#questions" className="nav-link">
                 <li
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navmenu"
                   className={`nav-item p-2 link-secondary ${
                     router.asPath === "/#questions"
                       ? "link-light border-bottom"
@@ -60,6 +67,8 @@ function Navbar() {
               </Link>
               <Link href="/nutrition" className="nav-link">
                 <li
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navmenu"
                   className={`nav-item p-2 link-secondary ${
                     router.asPath === "/nutrition"
                       ? "link-light border-bottom"
