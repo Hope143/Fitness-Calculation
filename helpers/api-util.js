@@ -19,3 +19,9 @@ export async function isFeaturedArticles() {
 
   return allEvents.filter((event) => event.isFeatured);
 }
+
+export async function weightLossHandler() {
+  const allEvents = await getAllArticles();
+
+  return allEvents.filter((event) => event.objective === "weightLoss");
+}

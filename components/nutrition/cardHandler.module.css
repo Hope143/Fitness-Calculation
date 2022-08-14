@@ -1,4 +1,4 @@
-.card {
+.innerCard {
   width: 18rem;
 }
 
@@ -7,9 +7,3 @@
   margin: auto;
   justify-content: center;
 }
-
-/* @media screen and (max-width: 1999px) {
-  .cardContainer {
-    width: 80%;
-  }
-} */

@@ -8,12 +8,9 @@ function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div className="container">
-          <a
-            href="#home"
-            className={`navbar-brand p-0 ${navbarStyle.navbarFont}`}
-          >
-            Fitness.Guide
-          </a>
+          <Link href="/#home" className={`navbar-brand p-0 text-light`}>
+            <p className={`p-0 m-0 ${navbarStyle.navbarFont}`}>Fitness.Guide</p>
+          </Link>
 
           <button
             className="navbar-toggler"
@@ -64,10 +61,11 @@ function Navbar() {
               <Link href="/nutrition" className="nav-link">
                 <li
                   className={`nav-item p-2 link-secondary ${
-                    router.asPath === "/training"
+                    router.asPath === "/nutrition"
                       ? "link-light border-bottom"
                       : ""
                   }`}
+                  w
                 >
                   Nutrition
                 </li>
