@@ -8,7 +8,7 @@ function ArticleId(props) {
   return (
     <div>
       <NutritionHeader />
-      <div className="p-5 pt-3 pt-xl-5  bg-light text-dark">
+      <div className="p-3 p-lg-5 pt-3 pt-xl-5  bg-light text-dark">
         <div className="container">
           <ArticleDetails article={article} />
         </div>
