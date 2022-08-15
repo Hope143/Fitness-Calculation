@@ -46,7 +46,7 @@
 
 .articleLinks {
   color: white;
-  background: rgba(0, 0, 0, 0);
+
   border: 1px solid white;
   cursor: pointer;
   background: linear-gradient(
@@ -79,4 +79,8 @@
   .unorderedlist {
     width: 80%;
   }
+}
+
+.red {
+  background: rgba(191, 98, 98) 50% !important;
 }

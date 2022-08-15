@@ -1,5 +1,6 @@
 .innerCard {
   width: 20rem;
+  cursor: pointer;
   /* margin: 5px 20px !important; */
 }
 

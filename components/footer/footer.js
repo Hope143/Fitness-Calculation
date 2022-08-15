@@ -1,6 +1,11 @@
 import footerStyle from "./footer.module.css";
+import { useRouter } from "next/router";
 
 function Footer() {
+  const router = useRouter().pathname;
+
+  console.log(router);
+
   return (
     <div className="bg-dark text-light px-3 py-5 px-sm-5 py-sm-5 position-relative">
       <div className="container">

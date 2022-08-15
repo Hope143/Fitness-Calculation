@@ -38,9 +38,14 @@ export async function HealthyLifestyleHandler() {
   return allEvents.filter((event) => event.objective === "healthyLifestyle");
 }
 
-
 export async function SupplementsHandler() {
   const allEvents = await getAllArticles();
 
   return allEvents.filter((event) => event.objective === "supplement");
+}
+
+export async function ArticleIdHandler(paramsId) {
+  const allEvents = await getAllArticles();
+
+  return allEvents.find((event) => event.id === paramsId);
 }
