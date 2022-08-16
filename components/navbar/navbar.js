@@ -79,6 +79,20 @@ function Navbar() {
                   Nutrition
                 </li>
               </Link>
+              <Link href="/feedback" className="nav-link">
+                <li
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navmenu"
+                  className={`nav-item p-2 link-secondary ${
+                    router.asPath === "/feedback"
+                      ? "link-light border-bottom"
+                      : ""
+                  }`}
+                  w
+                >
+                  Feedback
+                </li>
+              </Link>
             </ul>
           </div>
         </div>

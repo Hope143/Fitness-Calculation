@@ -1,0 +1,47 @@
+.topContainer {
+  height: 500px;
+}
+
+.container {
+  position: absolute;
+  top: -65px;
+  left: 25%;
+  width: 50%;
+}
+
+.emailContainer {
+  width: 40%;
+}
+
+@media screen and (max-width: 1175px) {
+  .container {
+    width: 60%;
+    left: 22%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .container {
+    width: 73%;
+    left: 12%;
+  }
+
+  .comment {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    position: static;
+    width: 100%;
+  }
+  .emailLabel {
+    color: #212529 !important;
+  }
+
+  .emailContainer {
+    margin-right: 1rem !important;
+    width: 100%;
+  }
+}

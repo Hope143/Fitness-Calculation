@@ -18,7 +18,7 @@ function ArticleDetails({ article }) {
   }
 
   return (
-    <div>
+    <div id="nutrition">
       <div className="row mb-3">
         <div className="col-12 col-xl-6">
           <h3 className="fs-1 mb-3">{article.title}</h3>

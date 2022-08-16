@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 function Footer() {
   const router = useRouter().pathname;
 
-  console.log(router);
+  const home = router === "/";
 
   return (
     <div className="bg-dark text-light px-3 py-5 px-sm-5 py-sm-5 position-relative">
@@ -88,7 +88,7 @@ function Footer() {
             type="button"
             className="btn btn-secondary btn-lg rounded-circle"
           >
-            <a className="text-light" href="#home">
+            <a className="text-light" href={home ? "/#home" : "/nutrition"}>
               <i className="bi bi-arrow-up-circle fs-2"></i>
             </a>
           </button>
