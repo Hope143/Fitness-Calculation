@@ -1,7 +1,7 @@
 import classes from "./newComment.module.css";
 import { useRef } from "react";
 
-function NewComment() {
+function NewComment(props) {
   const emailRef = useRef();
   const nameRef = useRef();
   const commentRef = useRef();
@@ -12,41 +12,41 @@ function NewComment() {
     const enteredName = nameRef.current.value;
     const enteredComment = commentRef.current.value;
 
-    console.log(enteredEmail);
+    props.onAddComment({
+      email: enteredEmail,
+      name: enteredName,
+      text: enteredComment,
+    });
   }
 
   return (
-    <div className={`border p-3 m-auto shadow ${classes.container}`}>
+    <div className={`border p-3 m-auto shadow text-light ${classes.container}`}>
       <form onSubmit={commentSubmitHandler}>
         <div className="d-block d-sm-flex mb-3">
           <div className={`me-5 ${classes.emailContainer}`}>
-            <label
-              className={`text-light me-4 fs-5 fw-bold mb-2 ${classes.emailLabel}`}
-            >
+            <label className={`me-4 fs-5 fw-bold mb-2 ${classes.emailLabel}`}>
               Your Email
             </label>
             <input
-              className="form-control border-dark"
+              className="form-control"
               type="email"
               ref={emailRef}
               required
             />
           </div>
           <div className={classes.emailContainer}>
-            <label
-              className={`text-light me-4 fs-5 fw-bold mb-2 ${classes.emailLabel}`}
-            >
+            <label className={`me-4 fs-5 fw-bold mb-2 ${classes.emailLabel}`}>
               Your Name
             </label>
             <input
-              className="form-control border-dark"
+              className="form-control"
               type="text"
               ref={nameRef}
               required
             />
           </div>
         </div>
-        <label className="text-dark me-4 fs-5 fw-bold mb-2">Comment</label>
+        <label className="me-4 fs-5 fw-bold mb-2">Comment</label>
         <div className="">
           <textarea
             className={`form-control w-75 ${classes.comment}`}

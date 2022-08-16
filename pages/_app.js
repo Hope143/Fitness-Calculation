@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useEffect } from "react";
 import Layout from "../components/layout/layout";
+import { NotificationContextProvider } from "../store/notification-context";
 
 function MyApp({ Component, pageProps }) {
   // Place this in the pages/_app.js file
@@ -12,9 +13,11 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <NotificationContextProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </NotificationContextProvider>
   );
 }
 
