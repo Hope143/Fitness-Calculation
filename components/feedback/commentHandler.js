@@ -8,7 +8,6 @@ function CommenHandler() {
 
   const [comments, setComments] = useState([]);
 
-  console.log(comments);
 
   useEffect(() => {
     fetch("/api/feedback/")
@@ -59,8 +58,12 @@ function CommenHandler() {
 
   return (
     <div>
-      <NewComment onAddComment={addCommentHandler} />
-      <CommentList comments={comments} />
+      <div className="px-md-5">
+        <NewComment onAddComment={addCommentHandler} />
+      </div>
+      <div className="px-lg-5">
+        <CommentList comments={comments} />
+      </div>
     </div>
   );
 }

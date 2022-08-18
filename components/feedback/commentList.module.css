@@ -1,0 +1,20 @@
+.container {
+  width: 35% !important;
+  background-color: 	#36454F;
+}
+
+.star {
+  color: yellow;
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    width: 45% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100% !important;
+  }
+}

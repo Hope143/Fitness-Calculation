@@ -15,7 +15,7 @@ async function handler(req, res) {
   }
 
   if (req.method === "POST") {
-    const { email, name, text } = req.body.commentData;
+    const { email, name, text, rating } = req.body.commentData;
 
     if (
       !email ||
@@ -33,6 +33,7 @@ async function handler(req, res) {
       email,
       text,
       name,
+      rating,
     };
 
     try {
@@ -43,8 +44,6 @@ async function handler(req, res) {
     } catch (error) {
       res.status(500).json({ message: "Adding comment failed!" });
     }
-
-    console.log(newComment);
   }
 
   if (req.method === "GET") {

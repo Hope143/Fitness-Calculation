@@ -1,7 +1,9 @@
 import classes from "./newComment.module.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import Rating from "./rating";
 
 function NewComment(props) {
+  const [starValue, setStarValue] = useState(null);
   const emailRef = useRef();
   const nameRef = useRef();
   const commentRef = useRef();
@@ -16,7 +18,9 @@ function NewComment(props) {
       email: enteredEmail,
       name: enteredName,
       text: enteredComment,
+      rating: starValue,
     });
+
   }
 
   return (
@@ -46,8 +50,12 @@ function NewComment(props) {
             />
           </div>
         </div>
+        <div className="mb-3">
+          <label className="me-4 fs-5 fw-bold mb-2">Rate the Website</label>
+          <Rating starValue={starValue} setStarValue={setStarValue} />
+        </div>
         <label className="me-4 fs-5 fw-bold mb-2">Comment</label>
-        <div className="">
+        <div>
           <textarea
             className={`form-control w-75 ${classes.comment}`}
             cols="20"

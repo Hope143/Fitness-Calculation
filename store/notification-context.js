@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import Router from "next/router";
 
 const NotificationContext = createContext({
   notification: null,
@@ -20,6 +21,7 @@ export function NotificationContextProvider(props) {
 
       return () => {
         clearTimeout(timer);
+        Router.reload(window.location.pathname);
       };
     }
   }, [activeNotification]);
