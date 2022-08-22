@@ -65,6 +65,20 @@ function Navbar() {
                   Questions
                 </li>
               </Link>
+              <Link href="/training" className="nav-link">
+                <li
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navmenu"
+                  className={`nav-item p-2 link-secondary ${
+                    router.asPath === "/training"
+                      ? "link-light border-bottom"
+                      : ""
+                  }`}
+                  w
+                >
+                  Training
+                </li>
+              </Link>
               <Link href="/nutrition" className="nav-link">
                 <li
                   data-bs-toggle="collapse"
