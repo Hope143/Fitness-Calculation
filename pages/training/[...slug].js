@@ -1,8 +1,39 @@
-import React from "react";
+import { getFilteredTraining } from "../../helpers/api-util-training";
+import TrainingSlug from "../../components/training/trainingSlug";
 
 function Slug(props) {
-  console.log(props);
-  return <div></div>;
+  const { askedTraining, level, muscleGroup } = props;
+
+  const values = Object.values(askedTraining);
+
+  const training = values[0];
+
+  return (
+    <div className="py-5 p-sm-5 bg-light text-dark">
+      <div className="container">
+        <TrainingSlug
+          level={level}
+          muscleGroup={muscleGroup}
+          training={training}
+        />
+      </div>
+    </div>
+  );
+}
+
+export async function getServerSideProps(context) {
+  const { params } = context;
+
+  const paramater = params.slug;
+
+  const muscleGroup = paramater[0];
+  const level = paramater[1];
+
+  const askedTraining = await getFilteredTraining({ muscleGroup, level });
+
+  return {
+    props: { muscleGroup, level, askedTraining },
+  };
 }
 
 export default Slug;

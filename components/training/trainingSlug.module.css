@@ -1,0 +1,47 @@
+.container {
+  width: 50%;
+}
+
+.topTitle {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 3.5rem;
+  text-transform: capitalize;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 38px;
+}
+
+.description {
+  font-size: 16px;
+  max-width: 91%;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1400px) {
+  .description {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 75%;
+  }
+
+  .description {
+    max-width: 83%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: 75%;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+}

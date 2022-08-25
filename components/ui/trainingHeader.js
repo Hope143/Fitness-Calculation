@@ -1,6 +1,5 @@
 import classes from "./trainingHeader.module.css";
 import { Fragment, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import TrainingHeaderHelper from "./trainingHeaderHelper";
@@ -14,14 +13,6 @@ function TrainingHeader(props) {
   const weightLoss = router == "/nutrition/weightLoss";
   const weightGain = router === "/nutrition/weightGain";
   const supplements = router === "/nutrition/supplements";
-
-  function onClickImageContainer(e) {
-    setValue(e.target);
-
-    setOnClickImage((prev) => !prev);
-  }
-
-  console.log(value);
 
   return (
     <Fragment>
@@ -41,6 +32,7 @@ function TrainingHeader(props) {
                     setOnClickImage(true);
                   }}
                 >
+                  <h4 className={classes.muscleTitle}>ARMS</h4>
                   <Image
                     src={"/trainingImages/arms.png"}
                     width={100}
@@ -67,6 +59,7 @@ function TrainingHeader(props) {
                     setOnClickImage(true);
                   }}
                 >
+                  <h4 className={classes.muscleTitle}>CHEST</h4>
                   <Image
                     src={"/trainingImages/chestt.png"}
                     width={100}
@@ -89,10 +82,38 @@ function TrainingHeader(props) {
                 <div
                   className={classes.imageContainer}
                   onClick={() => {
+                    setValue("shoulder");
+                    setOnClickImage(true);
+                  }}
+                >
+                  <h4 className={classes.muscleTitle}>SHOULDER</h4>
+                  <Image
+                    src={"/trainingImages/shoulder.png"}
+                    width={100}
+                    height={100}
+                    alt="chestMuscle-photo"
+                  />
+                  <div className={classes.overlay}></div>
+                </div>
+                {value === "shoulder" ? (
+                  <TrainingHeaderHelper
+                    onClickImage={onClickImage}
+                    musclePart="shoulder"
+                  />
+                ) : (
+                  ""
+                )}
+              </li>
+
+              <li className="position-relative">
+                <div
+                  className={classes.imageContainer}
+                  onClick={() => {
                     setValue("legs");
                     setOnClickImage(true);
                   }}
                 >
+                  <h4 className={classes.muscleTitle}>LEGS</h4>
                   <Image
                     src={"/trainingImages/legs.png"}
                     width={100}
@@ -119,6 +140,7 @@ function TrainingHeader(props) {
                     setOnClickImage(true);
                   }}
                 >
+                  <h4 className={classes.muscleTitle}>BACK</h4>
                   <Image
                     src={"/trainingImages/back.png"}
                     width={100}
@@ -144,6 +166,7 @@ function TrainingHeader(props) {
                     setOnClickImage(true);
                   }}
                 >
+                  <h4 className={classes.muscleTitle}>FULL BODY</h4>
                   <Image
                     src={"/trainingImages/fullBody.png"}
                     width={100}

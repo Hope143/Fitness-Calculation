@@ -3,13 +3,11 @@
 }
 
 .shortDescription {
-  text-align: justify;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .details {
-  text-align: justify;
-  font-size: 15px;
+  font-size: 16px;
   max-width: 90%;
 }
 

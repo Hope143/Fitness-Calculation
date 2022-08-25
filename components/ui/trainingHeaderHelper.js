@@ -9,7 +9,7 @@ function TrainingHeaderHelper({ onClickImage, musclePart }) {
       }`}
     >
       <ul className="list-unstyled">
-        <Link href={`/${musclePart}/beginner`}>
+        <Link href={`/training/${musclePart}/beginner`}>
           <a>
             <li className={`py-1 px-2 fs-5 text-light ${classes.listText}`}>
               Beginner
@@ -17,7 +17,7 @@ function TrainingHeaderHelper({ onClickImage, musclePart }) {
           </a>
         </Link>
         <hr className="m-0" />
-        <Link href={`/${musclePart}/intermediate`}>
+        <Link href={`/training/${musclePart}/intermediate`}>
           <a>
             <li className={`py-1 px-2 fs-5 text-light ${classes.listText}`}>
               Intermediate
@@ -25,7 +25,7 @@ function TrainingHeaderHelper({ onClickImage, musclePart }) {
           </a>
         </Link>
         <hr className="m-0" />
-        <Link href={`/${musclePart}/advanced`}>
+        <Link href={`/training/${musclePart}/advanced`}>
           <a>
             <li className={`py-1 px-2 fs-5 text-light ${classes.listText}`}>
               Advanced
