@@ -13,7 +13,7 @@ function NutritionHeader(props) {
 
   return (
     <Fragment>
-      <div className={`w-100 text-light text-center ${nutrition.topTitle}`}>
+      <header className={`w-100 text-light text-center ${nutrition.topTitle}`}>
         <div className="container">
           <h2 className={`${nutrition.title}`}>{props.title}</h2>
           <p className={`fw-lighter ${nutrition.subTitle}`}>
@@ -64,7 +64,7 @@ function NutritionHeader(props) {
             </ul>
           </div>
         </div>
-      </div>
+      </header>
     </Fragment>
   );
 }

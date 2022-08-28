@@ -7,17 +7,17 @@ function Supplements(props) {
   const { supplement } = props;
 
   return (
-    <div className="bg-light text-dark">
+    <section className="bg-light text-dark">
       <NutritionHeader title="Supplements" />
-      <div className="my-3">
-        <div className="px-5 py-0">
+      <article className="my-3">
+        <subheader className="px-5 py-0">
           <div className="container">
             <Subtitles subtitle="Articles" />
           </div>
-        </div>
+        </subheader>
         <CardHandler choosenArticles={supplement} />
-      </div>
-    </div>
+      </article>
+    </section>
   );
 }
 

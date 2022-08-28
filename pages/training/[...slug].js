@@ -9,15 +9,15 @@ function Slug(props) {
   const training = values[0];
 
   return (
-    <div className="py-5 p-sm-5 bg-light text-dark">
-      <div className="container">
+    <section className="py-5 p-sm-5 bg-light text-dark">
+      <article className="container">
         <TrainingSlug
           level={level}
           muscleGroup={muscleGroup}
           training={training}
         />
-      </div>
-    </div>
+      </article>
+    </section>
   );
 }
 

@@ -6,7 +6,7 @@ import Link from "next/link";
 function CardHandler({ choosenArticles }) {
   return (
     <Fragment>
-      <div className={`row ${classes.cardContainer}`}>
+      <article className={`row ${classes.cardContainer}`}>
         {choosenArticles &&
           choosenArticles.map((article) => (
             <Link href={"/nutrition/" + article.id} key={article.id}>
@@ -52,7 +52,7 @@ function CardHandler({ choosenArticles }) {
               </div>
             </Link>
           ))}
-      </div>
+      </article>
     </Fragment>
   );
 }

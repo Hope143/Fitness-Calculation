@@ -4,11 +4,11 @@ import Questions from "../components/questions/questions";
 
 function HomePage() {
   return (
-    <div>
+    <section>
       <FrontPage />
       <Calculation />
       <Questions />
-    </div>
+    </section>
   );
 }
 

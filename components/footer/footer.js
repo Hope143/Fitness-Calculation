@@ -7,7 +7,7 @@ function Footer() {
   const home = router === "/";
 
   return (
-    <div className="bg-dark text-light px-3 py-5 px-sm-5 py-sm-5 position-relative">
+    <footer className="bg-dark text-light px-3 py-5 px-sm-5 py-sm-5 position-relative">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6">
@@ -94,7 +94,7 @@ function Footer() {
           </button>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

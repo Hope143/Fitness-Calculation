@@ -16,7 +16,7 @@ function TrainingHeader(props) {
 
   return (
     <Fragment>
-      <div className={`w-100 text-light text-center ${classes.topTitle}`}>
+      <header className={`w-100 text-light text-center ${classes.topTitle}`}>
         <div className="container">
           <h2 className={`${classes.title}`}>{props.title}</h2>
           <p className={`fw-lighter ${classes.subTitle}`}>{props.paragraph}</p>
@@ -187,7 +187,7 @@ function TrainingHeader(props) {
             </ul>
           </div>
         </div>
-      </div>
+      </header>
     </Fragment>
   );
 }

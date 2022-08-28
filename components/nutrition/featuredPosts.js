@@ -3,10 +3,10 @@ import Subtitles from "../ui/subTitle";
 
 function FeaturedPosts({ isFeaturedArticles }) {
   return (
-    <div>
+    <article>
       <Subtitles subtitle="Featured Articles" />
       <CardHandler choosenArticles={isFeaturedArticles} />
-    </div>
+    </article>
   );
 }
 

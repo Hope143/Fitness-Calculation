@@ -7,17 +7,17 @@ function HealthyLifeStyle(props) {
   const { healthyLifestyle } = props;
 
   return (
-    <div className="bg-light text-dark">
+    <section className="bg-light text-dark">
       <NutritionHeader title="Healthy Lifestyle" />
-      <div className="my-3">
-        <div className="px-5 py-0">
+      <article className="my-3">
+        <header className="px-5 py-0">
           <div className="container">
             <Subtitles subtitle="Articles" />
           </div>
-        </div>
+        </header>
         <CardHandler choosenArticles={healthyLifestyle} />
-      </div>
-    </div>
+      </article>
+    </section>
   );
 }
 
