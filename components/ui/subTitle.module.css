@@ -2,9 +2,11 @@
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 700 !important;
   font-size: 120px;
-  color: #acacac80;
+  /* color: #acacac80; */
+  color: #212529;
   line-height: 7rem;
   text-shadow: 5px 5px #e0dfdf80 !important;
+  margin-top: 2rem;
 }
 
 .line {
@@ -19,10 +21,7 @@
   }
 
   .fontStyleTitle {
-    font-family: "Barlow Condensed", sans-serif;
-    font-weight: 700 !important;
     font-size: 90px;
-    color: #acacac80;
     line-height: 6rem;
   }
 
@@ -33,10 +32,7 @@
 
 @media screen and (max-width: 500px) {
   .fontStyleTitle {
-    font-family: "Barlow Condensed", sans-serif;
-    font-weight: 700 !important;
     font-size: 60px;
-    color: #acacac80;
     line-height: 4rem;
   }
 

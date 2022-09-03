@@ -10,7 +10,7 @@ function SecondDietChart({ isFormFulfilled, calorieGoal, maintainCalorie }) {
     <div className="text-center px-lg-3">
       <div>
         <h2
-          className={`text-secondary fs-6 text-center fw-bold mb-4 ${styleCalorie.fontSizeSubTitle}`}
+          className={`text-secondary fs-6 text-center mb-4 ${styleCalorie.fontSizeSubTitle2}`}
         >
           Zigzag diet schedule 2
         </h2>

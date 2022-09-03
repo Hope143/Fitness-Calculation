@@ -45,7 +45,7 @@ function questions() {
                 <>
                   <h2 className="accordion-header" id={item.headingNumber}>
                     <button
-                      className="accordion-button collapsed fw-bold"
+                      className="accordion-button collapsed text-secondary fw-bold"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target={`#${item.collapseNumber}`}
@@ -61,12 +61,7 @@ function questions() {
                     aria-labelledby={item.headingNumber}
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div
-                      className="accordion-body"
-                      style={{ textAlign: "justify" }}
-                    >
-                      {item.description}
-                    </div>
+                    <div className="accordion-body">{item.description}</div>
                   </div>
                 </>
               );

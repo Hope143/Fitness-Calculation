@@ -3,6 +3,11 @@
   font-size: 25px !important;
 }
 
+.fontSizeSubTitle2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 23px !important;
+}
+
 .calorieWidth {
   width: 50% !important;
   margin: none;

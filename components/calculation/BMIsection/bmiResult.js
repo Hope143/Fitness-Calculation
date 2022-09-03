@@ -136,7 +136,7 @@ function inputData({
                       required
                       onChange={HandleChange}
                     />
-                    <label className="form-check-label me-2 fw-bold text-dark">
+                    <label className="form-check-label me-2 fw-bold text-secondary">
                       MALE
                     </label>
                   </div>
@@ -150,7 +150,7 @@ function inputData({
                       id="flexRadioDefault2"
                       onChange={HandleChange}
                     />
-                    <label className="form-check-label fw-bold text-dark">
+                    <label className="form-check-label fw-bold text-secondary">
                       FEMALE
                     </label>
                   </div>

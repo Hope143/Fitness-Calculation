@@ -8,7 +8,7 @@ function DietSection({ isFormFulfilled, calorieGoal, maintainCalorie }) {
     <div className="p-0">
       <Subtitles subtitle="ADVICED DIET" />
       <h2
-        className={`text-dark text-center fw-bold mb-4 ${styleCalorie.fontSizeSubTitle}`}
+        className={`text-secondary text-center fw-bold mb-4 ${styleCalorie.fontSizeSubTitle}`}
       >
         7 Day Calories Cycle (Zig-Zag)
       </h2>

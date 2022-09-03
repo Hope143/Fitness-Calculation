@@ -66,8 +66,8 @@ function CalorieResult({
     <div>
       <Subtitles subtitle="CALCULATE CALORIES" />
       {/* <InvalidModal isFormFulfilled={isFormFulfilled} /> */}
-      <p className="fs-5">
-        The provided details above are automatically applied here
+      <p className="fs-5 text-secondary fst-italic">
+        The provided details above are automatically applied here.
       </p>
       {/* <InvalidModal /> */}
       <div className="d-block d-md-flex justify-content-around">
@@ -91,7 +91,7 @@ function CalorieResult({
                       setCalorieGoal(e.target.value);
                     }}
                   />
-                  <label className="form-check-label me-2 fw-bold text-dark">
+                  <label className="form-check-label me-2 fw-bold text-secondary">
                     Calorie Deficit
                   </label>
                 </div>
@@ -107,7 +107,7 @@ function CalorieResult({
                       setCalorieGoal(e.target.value);
                     }}
                   />
-                  <label className="form-check-label fw-bold text-dark">
+                  <label className="form-check-label fw-bold text-secondary">
                     Calorie Surplus
                   </label>
                 </div>
